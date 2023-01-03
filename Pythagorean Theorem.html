@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1> Pythagorean Theorem Calculator</h1>
+  </h6> Created by: John Albert Buenaventura</h6>
+<p>In any right triangle, the square of the hypotenuse(c) is equal to the sum of the squares of the legs(a,b). </p>
+
+<div class="row">
+<div class="label-div"><label>leg(a)</label></div>
+<div class="label-input"><input type="text" id="lega"></div>
+</div>
+
+<div class="row">
+<div class="label-div"><label>leg(b)</label></div>
+<div class="label-input"><input type="text" id="legb"></div>
+</div>
+
+<div class="row">
+<div class="label-div"><label>hypothenuse(c)</label>
+</div>
+<div class="label-input"><input type="text" id="hypotenuse"></div>
+</div>
+
+<div class="row"><div class="row">
+<div class="label-div"><label>Output</label></div>
+ <div class="label-input"><textarea type="text" id="release"></textarea></div>
+</div>
+</div>
+
+<div class="row"><button onclick="cal()">Calculate</button></div></div>
+<div class="row"></div>
+</div>
+
+</body>
+<script>
+function cal(){
+let a = document.getElementById("lega").value;
+let b = document.getElementById("legb").value;
+let c = document.getElementById("hypotenuse").value;
+let d = a * a ;
+let e = b * b ;
+let f = c * c ;
+let g = d + e; 
+let m = f - e;
+let n = f - d;
+let h = Math.sqrt(g);
+let o = Math.sqrt(m);
+let p = Math.sqrt(n);
+let k = "if leg(a) measures = "+ a +"&nbsp" + "and leg(b) measures = "+ b + "&nbsp" +" then hypotenuse (c) = " + "&nbsp"+ h ;
+let j= "if leg(b) measures = "+ b + "&nbsp" + "&nbsp"+ "and hypotenuse (c) = " + "&nbsp"+ h + "&nbsp"+"then leg (a) measures=" + "&nbsp"+ o ;
+let l= "if leg(a) measures = "+ a + "&nbsp" + "&nbsp"+ "and hypotenuse (c) = " + "&nbsp"+ h + "&nbsp"+ "then leg (b) measures="+ "&nbsp" + p ;
+if (a<=b && a>0 && b>0 && c==0) {
+document.getElementById("release").innerHTML = k;} else if (c>=b && b>0 && a==0){
+document.getElementById("release").innerHTML = j;} else if (c>=a && a>0 && b==0){
+document.getElementById("release").innerHTML = l;} else{
+document.getElementById("release").innerHTML = "Input Error:It must be {a,b} >=0 , a < b , or c > {a,b}";
+}}
+</script>
+</html>

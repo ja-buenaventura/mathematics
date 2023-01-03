@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Factors</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.ft {
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+    padding: 1% 5%;
+    margin: 6px;
+    border-radius: 13px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1>Finding the Factors of Natural Numbers</h1>
+ </h6> Created by: John Albert Buenaventura</h6>
+
+<div class="row">
+<div class="label-div"><label>Given Number </label></div>
+<div class="label-input"><input type="text" id="given" placeholder="Input a number"></div>
+</div>
+<div class="row"><button onclick="cal()" >Calculate</button></div></div>
+
+<div class="label-div"><label></label></div>
+ <div class="label-input"><p readonly  type="text" id="result" ></p></div>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+function cal(){
+number = document.getElementById("given").value;
+number = parseInt(number);
+
+if(Number.isInteger(number)){ fctr='';
+
+num = Math.ceil( number/2)
+for(i=1; i<=num;i++){ if(number%i==0){ fctr =fctr + i + '<br>' } }
+
+document.getElementById('result').innerHTML= '<div class="ft"> The factor(s) of '+number+' include(s):<br> <br>'+ fctr+""+number+'</div>' ;
+}
+else{ alert("Input given natural numbers(N)")}	
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Clock Angle</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text],input[type=time], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1>Clock Angle</h1>
+</h6>Created by: John Albert Buenaventura</h6>
+<div class="row">
+<div class="label-div"><label>Time</label></div>
+<div class="label-input"><input type="time" id="clock" placeholder="Input time" onchange="cal()"></div>
+</div>
+
+
+<div class="row"><div class="row">
+<div class="label-div"><label>:</label></div>
+ <div class="label-input"><p  readonly  type="text" id="average" style="font-size: 69%;"></p></div>
+</div>
+<div class="label-div"><label>Angle</label></div>
+ <div class="label-input"><textarea  readonly  type="text" id="release" ></textarea></div>
+</div>
+</div>
+</div>
+</body>
+<script>
+function cal(){
+var a = document.getElementById("clock").value;
+var b = a.replace(":",'","');
+var c = '["' + b +'"]';
+var d = eval(c);
+var e = d[0];
+var f = d[1];
+var g = e % 12;
+var anglehour =  60 * g;
+var anglemin = 11 * f;
+var numerator = Math.abs(anglehour - anglemin);
+var angle = numerator / 2;
+
+if (angle > 180) { document.getElementById("release").innerHTML = eval(360 - angle) + " degree" ;} else {
+ document.getElementById("release").innerHTML = angle + " degree";}
+ 
+}
+</script>
+
+</html>

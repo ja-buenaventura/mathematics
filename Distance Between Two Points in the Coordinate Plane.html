@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Distance Formula</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1>Distance Between Two Points in the Coordinate Plane</h1>
+  </h6> Created by: John Albert Buenaventura</h6>
+<p>To calculate the distance between the two points, The square root of the sum of the changes in x-coordinates and  the changes of y-coordinates </p>
+
+<div class="row">
+<div class="label-div"><label>Point 1</label></div>
+<div class="label-input"><input type="text" id="pta" placeholder="Input the 1st coordinates(x,y)"></div>
+</div>
+
+<div class="row">
+<div class="label-div"><label>Point 2</label></div>
+<div class="label-input"><input type="text" id="ptb" placeholder="Input the 2nd coordinates(x,y)"></div>
+</div>
+
+<div class="row"><div class="row">
+<div class="label-div"><label>:</label></div>
+ <div class="label-input"><textarea readonly type="text" id="release"></textarea></div>
+</div>
+<div class="label-div"><label>Distance</label></div>
+ <div class="label-input"><textarea readonly type="text" id="slope"></textarea></div>
+</div>
+</div>
+
+<div class="row"><button onclick="cal()">Calculate</button></div></div>
+<div class="row"></div>
+
+</div>
+
+</body>
+<script>
+function cal(){
+var a = document.getElementById("pta").value;
+var b = document.getElementById("ptb").value;
+var c = a.replace("(","[p") ;
+var d = c.replace(")","p]");
+var e = d.replace(",","p,p");
+var f = e.replaceAll("p",'"' );
+var g = eval(f);
+var h = g[0];
+var i = g[1];
+var j = b.replace("(","[p") ;
+var k = j.replace(")","p]");
+var l = k.replace(",","p,p");
+var m = l.replaceAll("p",'"' );
+var n = eval(m);
+var o = n[0];
+var p = n[1];
+var q =  p-i;
+var r =  o-h; 
+var t =  q * q;
+var u =  r * r;
+var v =  t+u;
+var x =  Math.sqrt(v);
+var z =  "Solution:"+"Square Root [("+ o +"-"+h+")^2 + ("+p+"-"+i+")^2]  ->"+"Square Root ("+u+"+"+t+") ->" ;
+document.getElementById("release").innerHTML =z +"&nbsp"+"Square Root of ("+v+")" ;
+document.getElementById("slope").innerHTML =  x;
+
+}
+</script>
+
+</html>

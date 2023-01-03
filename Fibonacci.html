@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Fibonacci: Nth Term</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1>Finding nth Term of Fibonacci Sequence using Binet’s Formula</h1>
+</h6> Created by: John Albert Buenaventura</h6>
+<p>To determine the nth term for Fibonnaci Sequence</p>
+
+<div class="row">
+<div class="label-div"><label>Nth Term </label></div>
+<div class="label-input"><input type="text" id="binet" placeholder="Input nth term"></div>
+</div>
+
+
+<div class="row"><div class="row">
+<div class="label-div"><label>Solution:</label></div>
+ <div class="label-input"><p  readonly  type="text" id="release" style="font-size: 69%;"></p></div>
+</div>
+<div class="label-div"><label>Fibonacci Number</label></div>
+ <div class="label-input"><textarea  readonly  type="text" id="average" ></textarea></div>
+</div>
+</div>
+
+<div class="row"><button onclick="cal()">Calculate</button></div></div>
+<div class="row"></div>
+</div>
+</body>
+<script>
+function cal(){
+var a = document.getElementById("binet").value;
+var b = (1 + Math.sqrt(5))/2;
+var c = (1 - Math.sqrt(5))/2;
+var d =  b ** a;
+var e =  c ** a;
+var f = d- e;
+var g = Math.sqrt(5);
+var h = f/g;
+var i =  Math.round(h)
+var j = "Solution:"+"<br>➡️   "+"[((1+ &#8730( 5 ))/2)^"+a+"-((1- &#8730( 5 ))/2)^"+a+")]/"+"&#8730( 5 )"+"&nbsp"+"</br><br>➡️" + "[("+b+"/2)^"+a+"-(("+c+"/2)^"+a+")]/"+"&#8730( 5 )"+"&nbsp"+"</br><br>➡️"+ "["+d+"-"+e+"]/"+"&#8730( 5 )" +"&nbsp"+"</br><br>➡️    "+ "["+f+"]/"+"&#8730( 5 )"+"&nbsp"+"</br><br>➡️    "+ "["+f+"]/"+g +"&nbsp"+"</br><br>➡️    "+h +"&nbsp"+"</br><br>➡️    "+i;
+if (a > 0) { document.getElementById("release").innerHTML = j;
+document.getElementById("average").innerHTML = "The "+"( "+a+" )term of Fibonacci sequence is "  + i;
+} else { document.getElementById("release").innerHTML = alert("Input valid nth term") ;
+}}
+</script>
+
+</html>

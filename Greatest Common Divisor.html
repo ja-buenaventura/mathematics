@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Greatest Common Divisor</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1>Greatest Common Divisor</h1>
+  </h6> Created by: John Albert Buenaventura</h6>
+<p>To solve for the GCD. Type GCD(a,b), where a,b > 0</p>
+
+<div class="row">
+<div class="label-div"><label>Input  </label></div>
+<div class="label-input"><input type="text" id="gcd" placeholder="Input the given GCD(a,b) "></div>
+</div>
+
+
+<div class="row"><div class="row">
+<div class="label-div"><label>Info:</label></div>
+ <div class="label-input"><textarea  readonly  type="text" id="release"></textarea></div>
+</div>
+<div class="label-div"><label>Output</label></div>
+ <div class="label-input"><textarea  readonly  type="text" id="result" ></textarea></div>
+</div>
+</div>
+
+<div class="row"><button onclick="cal()">Calculate</button></div></div>
+<div class="row"></div>
+
+</div>
+</body>
+<script>
+function cal(){
+var a = document.getElementById("gcd").value;
+var b = a.replace("GCD(",'["');
+var c = b.replace(",",'","');
+var d = c.replace(")",'"]');
+var e = eval(d)
+var f = e[0];
+var g = e[1];
+if (f>0 && g>0){for (let i = 1; i <= f && i <= g; i++) {if( f % i == 0 && g % i == 0) { x = i;}}
+document.getElementById("release").innerHTML = "If a= "+f+" and " +"b = "+g+" the greatest common divisor is equal to "+ x+"." ;
+document.getElementById("result").innerHTML = "GCD("+e+")="+x;
+} else{alert("Wrong Input: GCD(a,b) where a,b>0")}}
+</script>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Equation of Straigth Lines </title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1>Equation of Straigth Line: Two-Points Formula</h1>
+  </h6> Created by: John Albert Buenaventura</h6>
+
+<p>A line that contains (x<sub>1</sub>,y<sub>1</sub>) and (x<sub>2</sub>,y<sub>2</sub>)</p>
+<div class="row">
+<div class="label-div"><label>Point 1(x<sub>1</sub>,y<sub>1</sub>)</label></div>
+<div class="label-input"><input type="text" id="pta" placeholder="Input the 1st coordinates(x,y)"></div>
+</div>
+
+<div class="row">
+<div class="label-div"><label>Point 2(x<sub>2</sub>,y<sub>2</sub>)</label></div>
+<div class="label-input"><input type="text" id="ptb" placeholder="Input the 2nd coordinates(x,y)"></div>
+</div>
+
+<div class="row"><div class="row">
+<div class="label-div"><label>Slope(m)</label></div>
+ <div class="label-input"><textarea readonly type="text" id="xa"></textarea></div>
+</div>
+<div class="label-div"><label>Equation( y=mx+b form)</label></div>
+ <div class="label-input"><textarea readonly type="text" id="ya"></textarea></div>
+</div>
+
+</div>
+
+<div class="row"><button onclick="cal()">Calculate</button></div></div>
+<div class="row"></div>
+</div>
+
+</body>
+<script>
+function cal(){
+var a = document.getElementById("pta").value;
+var b = document.getElementById("ptb").value;
+
+var mathya = a.replace("abs","Math.abs");
+var mathyb = mathya.replace("acos","Math.acos");
+var mathyc = mathyb.replace("acosh","Math.acosh");
+var mathyd = mathyc.replace("asin","Math.asin");
+var mathye = mathyd.replace("asinh","Math.asinh");
+var mathyf = mathye.replace("atan","Math.atan");
+var mathyg = mathyf.replace("atan2","Math.atan2");
+var mathyh = mathyg.replace("atanh","Math.atanh");
+var mathyi = mathyh.replace("cbrt","Math.cbrt");
+var mathyax = mathyi.replace("ceil","Math.ceil");
+var mathyaa = mathyax.replace("cos","Math.cos");
+var mathyab = mathyaa.replace("cosh","Math.cosh");
+var mathyac = mathyab.replace("exp","Math.exp");
+var mathyad = mathyac.replace("floor","Math.floor");
+var mathyae = mathyad.replace("log","Math.log");
+var mathyaf = mathyae.replace("max","Math.max");
+var mathyag = mathyaf.replace("min","Math.min");
+var mathyah = mathyag.replace("pow","Math.pow");
+var mathyai = mathyah.replace("random","Math.random");
+var mathybx = mathyai.replace("round","Math.round");
+var mathyba = mathybx.replace("sign","Math.sign");
+var mathybb = mathyba.replace("sin","Math.sin");
+var mathybc = mathybb.replace("sinh","Math.sinh");
+var mathybd = mathybc.replace("sqrt","Math.sqrt");
+var mathybe = mathybd.replace("tan","Math.tan");
+var mathybf = mathybe.replace("tanh","Math.tanh");
+var mathybg = mathybf.replace("trunc","Math.trunc");
+
+
+var mathza = b .replace("abs","Math.abs");
+var mathzb = mathza.replace("acos","Math.acos");
+var mathzc = mathzb.replace("acosh","Math.acosh");
+var mathzd = mathzc.replace("asin","Math.asin");
+var mathze = mathzd.replace("asinh","Math.asinh");
+var mathzf = mathze.replace("atan","Math.atan");
+var mathzg = mathzf.replace("atan2","Math.atan2");
+var mathzh = mathzg.replace("atanh","Math.atanh");
+var mathzi = mathzh.replace("cbrt","Math.cbrt");
+var mathzax = mathzi.replace("ceil","Math.ceil");
+var mathzaa = mathzax.replace("cos","Math.cos");
+var mathzab = mathzaa.replace("cosh","Math.cosh");
+var mathzac = mathzab.replace("exp","Math.exp");
+var mathzad = mathzac.replace("floor","Math.floor");
+var mathzae = mathzad.replace("log","Math.log");
+var mathzaf = mathzae.replace("max","Math.max");
+var mathzag = mathzaf.replace("min","Math.min");
+var mathzah = mathzag.replace("pow","Math.pow");
+var mathzai = mathzah.replace("random","Math.random");
+var mathzbx = mathzai.replace("round","Math.round");
+var mathzba = mathzbx.replace("sign","Math.sign");
+var mathzbb = mathzba.replace("sin","Math.sin");
+var mathzbc = mathzbb.replace("sinh","Math.sinh");
+var mathzbd = mathzbc.replace("sqrt","Math.sqrt");
+var mathzbe = mathzbd.replace("tan","Math.tan");
+var mathzbf = mathzbe.replace("tanh","Math.tanh");
+var mathzbg = mathzbf.replace("trunc","Math.trunc");
+
+var seta = mathybg.replace("(",'["',1); /* Replace First Charater*/
+var setb = seta.replace(",",'","',1);  
+var setc = setb.substring(0,setb.length - 1)+'"]'; /* Replace Last Charater*/
+var setd = eval(setc);
+var sete = setd[0];
+var setf = eval(sete); /* xsub1*/
+var setg = setd[1]; 
+var seth = eval(setg); /* ysub1*/
+
+var setaa = mathzbg.replace("(",'["',1); /* Replace First Charater*/
+var setbb = setaa.replace(",",'","',1);  
+var setcc = setbb.substring(0,setbb.length - 1)+'"]'; /* Replace Last Charater*/
+var setdd = eval(setcc);
+var setee = setdd[0];
+var setff = eval(setee); /* xsub2*/
+var setgg = setdd[1]; 
+var sethh = eval(setgg); /* ysub2*/
+
+var x1= setf;
+var y1= seth;
+var x2= setff;
+var y2= sethh;
+var changeofy = y2 - y1;
+var changeofx = x2 - x1;
+var slope = changeofy / changeofx;
+var slopex = slope.toFixed(5) +"x";
+var slopex1 = -1*slope * x1;
+var right = slopex1 + y1;
+var line = "y = "+ slopex + " + "+ right.toFixed(5);
+var result = line.replaceAll("+ -"," - ");
+if (x1 == x2) { document.getElementById("xa").innerHTML = "Slope is infinite"; document.getElementById("ya").innerHTML = "The x =" +x1 } 
+else if (y1 == y2) {document.getElementById("xa").innerHTML = "Slope is 0"; document.getElementById("ya").innerHTML = "The y =" +y1 } else {
+document.getElementById("xa").innerHTML = slope;
+document.getElementById("ya").innerHTML =  result;} return;}
+
+</script>
+
+</html>

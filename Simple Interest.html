@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Annual Simple Interest</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+
+}
+h1 {
+    color: #8bc34a;
+
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    resize: vertical;
+    border-color: #00abff;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.box-area {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.label-div {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.label-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .label-div, .label-input, button {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="box-area">
+<h1>Annual Simple Interest</h1>
+ </h6> Created by: John Albert Buenaventura</h6>
+
+<p>To determine simple interest , Find the product of the principal, the rate and the time(in year) </p>
+
+<div class="row">
+<div class="label-div"><label>Principal </label></div>
+<div class="label-input"><input type="text" id="principal" placeholder="Input principal amount"></div>
+</div>
+
+<div class="row"><div class="row">
+<div class="label-div"><label>Rate:</label></div>
+ <div class="label-input"><input type="text" id="rate" placeholder="Input rate(%) "></div>
+</div>
+<div class="label-div"><label>Time</label></div>
+ <div class="label-input"><input type="text" id="time" placeholder="Input number of term(s)"></div>
+ 
+ <select class="label-input" name="per" id="term">
+    <option value="52.1786">Week</option>
+    <option value="4">Quarter</option>
+    <option value="12">Month</option>
+    <option value="1">Year</option>
+  </select>
+ 
+</div>
+<div class="label-div"><label>Simple Interest</label></div>
+ <div class="label-input"><textarea readonly  type="text" id="result" ></textarea></div>
+ <div class="label-input"><p readonly  type="text" id="famount" ></p></div>
+</div>
+</div>
+
+<div class="row"><button onclick="cal()" >Calculate</button></div></div>
+<div class="row"></div>
+</div>
+</body>
+<script>
+function cal(){
+var a = document.getElementById("principal").value;
+var b = document.getElementById("rate").value;
+var c = document.getElementById("time").value;
+var d = document.getElementById("term").value;
+var e = eval(a);
+var f = eval(b);
+var g = eval(c);
+var h = eval(d);
+var i = f/100;
+var j = c/d;
+var k = a * i * j;
+var l = e + k
+var m = d.replace('52.1786',"week(s)");
+var n = m.replace('4',"quarter(s)");
+var o = n.replace('12',"month(s)");
+var p = o.replace('1',"year(s)");
+var q = i * 100;
+  if (a == 0) { alert("Input Principal Amount"); } else if (b == 0) { alert("Input rate"); } else if (c == 0 ) { alert("Input time"); }  else {
+document.getElementById("result").innerHTML = k;
+document.getElementById("famount").innerHTML = "After "+g+" "+p+", The principal amount of "+a+" with the interest rate of "+q+"% annually will earn "+k.toFixed(5)+". The final amount is equal to "+ l.toFixed(5) ;
+  speechSynthesis.speak(new SpeechSynthesisUtterance(document.getElementById("famount").innerHTML));} return ;
+
+} 
+</script>
+
+</html>
